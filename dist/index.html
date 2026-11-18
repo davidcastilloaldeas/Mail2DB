@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Abre archivos EML y extrae el contenido de tus correos directamente en el navegador.">
+<title>Mail2DB · Lector de correos</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="postal-mime.js"></script>
+<script defer src="app.js"></script>
+</head>
+<body>
+<header><div class="bar"><div class="brand"><span aria-hidden="true">✉</span> Mail2DB</div><small>Procesamiento local</small></div></header>
+<main>
+<section class="intro">
+<h1>Lector de correos</h1>
+<p>Abre archivos .eml para extraer el mensaje, sus datos y sus adjuntos.</p>
+</section>
+<section id="drop" class="drop" aria-label="Importar correos">
+<div class="symbol" aria-hidden="true">⇧</div>
+<h2>Arrastra tus correos aquí</h2>
+<p>Archivos .eml · Hasta 25 MB por archivo</p>
+<label class="primary" for="files">Elegir archivos</label>
+<input id="files" type="file" accept=".eml,message/rfc822" multiple>
+</section>
+<p id="status" role="status"></p>
+<ul id="errors" class="errors" hidden></ul>
+<section id="results" hidden aria-label="Correos extraídos">
+<div class="toolbar"><h2>Correos extraídos <span id="count"></span></h2><button id="clear">Limpiar</button><button id="export" class="primary">Exportar JSON</button></div>
+<div class="panel">
+<nav id="messages" aria-label="Correos extraídos"></nav>
+<article id="message"></article>
+</div>
+</section>
+<footer>Tus archivos permanecen en este navegador.</footer>
+</main>
+</body>
+</html>
